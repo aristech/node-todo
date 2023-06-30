@@ -24,4 +24,4 @@ jobs:
       - run: docker rm todo
       - run: docker build . -t aristech/node-todo
       - run: docker run --name todo -p 8000:8000 -d aristech/node-todo
-      - run: sudo service nginx stop
+      - run: sudo service nginx restart
