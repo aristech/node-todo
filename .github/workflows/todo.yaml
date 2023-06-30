@@ -2,8 +2,6 @@ name: todo CI
 
 on:
   push:
-    paths-ignore:
-      - "public/**"
     branches: [main]
   pull_request:
     branches: [main]
