@@ -18,7 +18,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      # - run: yarn install
-      # - run: yarn build
-# - run: sudo service nginx restart
-
+      - run: yarn install
+      - run: yarn test
+      - run: docker stop todo
+      - run: docker build . -t aristech/node-todo
+      - run: docker run --name todo -p 8000:8000 -d aristech/node-todo
+      - run: sudo service nginx stop
